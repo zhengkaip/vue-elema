@@ -23,7 +23,14 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+console.log("webpackConfig!!!!!!!!")
+console.log("webpackConfig::",webpackConfig)
+console.log("end!!!!!!!!")
 var compiler = webpack(webpackConfig)
+
+console.log("compiler!!!!!!!!")
+console.log("compiler::",compiler)
+console.log("end!!!!!!!!")
 
 var appData=require("../data/data.json");
 
@@ -61,7 +68,6 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   quiet: true
 })
-
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
   log: () => {},
   heartbeat: 2000
